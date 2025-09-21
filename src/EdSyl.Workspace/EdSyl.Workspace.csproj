@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootDirectory>$(MSBuildThisFileDirectory)../..</RootDirectory>
+  </PropertyGroup>
+
+  <!-- CA1014: Mark assemblies with CLSCompliant -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.CLSCompliantAttribute">
+      <_Parameter1>true</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <!-- install NPM packages -->
+  <!-- https://www.meziantou.net/running-npm-tasks-when-building-a-dotnet-project.html -->
+  <Target
+    Name="npm"
+    Condition="'$(CI)' != 'true'"
+    BeforeTargets="Restore;CollectPackageReferences"
+    Inputs="$(RootDirectory)/package.json"
+    Outputs="$(RootDirectory)/node_modules/install.json">
+    <Exec WorkingDirectory="$(RootDirectory)" Command="npm install" />
+    <Copy SourceFiles="$(RootDirectory)/package.json" DestinationFiles="$(RootDirectory)/node_modules/install.json" />
+  </Target>
+
+  <!-- install Husky -->
+  <Target
+    Name="husky"
+    Condition="'$(CI)' != 'true'"
+    BeforeTargets="Restore;CollectPackageReferences"
+    Inputs="$(RootDirectory)/.husky/task-runner.json"
+    Outputs="$(RootDirectory)/.husky/_/husky.sh">
+    <Exec WorkingDirectory="$(RootDirectory)" Command="dotnet tool restore" />
+    <Exec WorkingDirectory="$(RootDirectory)" Command="dotnet husky install" />
+  </Target>
+</Project>

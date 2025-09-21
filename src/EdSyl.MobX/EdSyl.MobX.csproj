@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- BUG: Fody prevents dotnet hot realod -->
+    <DisableFody>true</DisableFody>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Local Dependencies -->
+  <ItemGroup>
+    <ProjectReference Include="..\EdSyl.Core\EdSyl.Core.csproj" />
+  </ItemGroup>
+
+  <!-- Exteernal Dependencies -->
+  <ItemGroup>
+    <PackageReference Include="Cortex.Net" />
+    <PackageReference Include="Cortex.Net.Blazor" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" />
+  </ItemGroup>
+</Project>

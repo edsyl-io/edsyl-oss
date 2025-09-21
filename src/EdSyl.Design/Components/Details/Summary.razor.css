@@ -1,0 +1,17 @@
+.summary {
+  @apply w-full inline-flex items-center gap-2;
+
+  [open] > &.summary-underline {
+    @apply border-b border-inherit;
+  }
+
+  /* hide browser marker */
+  details > & {
+    @apply list-none;
+
+    &::marker,
+    &::-webkit-details-marker {
+      @apply hidden;
+    }
+  }
+}

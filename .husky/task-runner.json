@@ -1,0 +1,33 @@
+{
+  "tasks": [
+    {
+      "name": "prettier",
+      "command": "npx",
+      "args": ["prettier", "--check", "--ignore-unknown", "${staged}"]
+    },
+    {
+      "name": "dotnet format",
+      "command": "dotnet",
+      "args": ["format", "--verify-no-changes", "--no-restore", "--severity", "error", "--include", "${staged}"],
+      "include": ["**/*.cs"]
+    },
+    {
+      "name": "bicep",
+      "command": "node",
+      "args": ["./.config/bicep-format.mjs", "--verify-no-changes", "${staged}"],
+      "include": ["**/*.bicep"]
+    },
+    {
+      "name": "eslint",
+      "command": "npx",
+      "args": ["eslint", "--no-error-on-unmatched-pattern", "${staged}"],
+      "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+    },
+    {
+      "name": "tsc",
+      "command": "npx",
+      "args": ["tsc-files", "--noEmit", "${staged}"],
+      "include": ["**/*.ts", "**/*.tsx"]
+    }
+  ]
+}

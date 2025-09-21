@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Local Dependencies -->
+  <ItemGroup>
+    <ProjectReference Include="..\EdSyl.Core\EdSyl.Core.csproj" />
+  </ItemGroup>
+
+  <!-- External Dependencies -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="System.Linq.Async" />
+  </ItemGroup>
+</Project>

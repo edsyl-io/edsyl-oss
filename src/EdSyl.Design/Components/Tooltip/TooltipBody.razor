@@ -1,0 +1,63 @@
+@namespace EdSyl.Design.Components
+@inherits ComponentWithChildren
+@attribute [ClassName("tooltip-body")]
+
+<div class="tooltip-content">
+  <div class="@Class">
+    @ChildContent
+  </div>
+</div>
+
+@code {
+  [ClassVariantHolder]
+  private string? dye;
+
+  [Parameter]
+  [ClassVariantToggle("tooltip-primary")]
+  public bool Primary {
+    get => Variance(ref dye);
+    set => Variance(ref dye, value);
+  }
+
+  [Parameter]
+  [ClassVariantToggle("tooltip-secondary")]
+  public bool Secondary {
+    get => Variance(ref dye);
+    set => Variance(ref dye, value);
+  }
+
+  [Parameter]
+  [ClassVariantToggle("tooltip-accent")]
+  public bool Accent {
+    get => Variance(ref dye);
+    set => Variance(ref dye, value);
+  }
+
+  [Parameter]
+  [ClassVariantToggle("tooltip-info")]
+  public bool Info {
+    get => Variance(ref dye);
+    set => Variance(ref dye, value);
+  }
+
+  [Parameter]
+  [ClassVariantToggle("tooltip-success")]
+  public bool Success {
+    get => Variance(ref dye);
+    set => Variance(ref dye, value);
+  }
+
+  [Parameter]
+  [ClassVariantToggle("tooltip-warning")]
+  public bool Warning {
+    get => Variance(ref dye);
+    set => Variance(ref dye, value);
+  }
+
+  [Parameter]
+  [ClassVariantToggle("tooltip-error")]
+  public bool Danger {
+    get => Variance(ref dye);
+    set => Variance(ref dye, value);
+  }
+}

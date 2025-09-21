@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Local Dependencies -->
+  <ItemGroup>
+    <ProjectReference Include="..\EdSyl.Core\EdSyl.Core.csproj" />
+  </ItemGroup>
+
+  <!-- External Dependencies -->
+  <ItemGroup>
+    <PackageReference Include="Humanizer" />
+    <PackageReference Include="JetBrains.Annotations" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+  </ItemGroup>
+</Project>

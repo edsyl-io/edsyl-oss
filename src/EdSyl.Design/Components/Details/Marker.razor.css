@@ -1,0 +1,9 @@
+.marker {
+  @apply select-none !m-0;
+  transition: transform 150ms ease-out;
+
+  [open] > .summary > & {
+    /* default marker rotation faced right */
+    transform: rotate(90deg);
+  }
+}

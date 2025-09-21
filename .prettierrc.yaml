@@ -1,0 +1,54 @@
+arrowParens: "avoid"
+bracketSameLine: true
+bracketSpacing: true
+htmlWhitespaceSensitivity: "css"
+proseWrap: "preserve"
+quoteProps: "consistent"
+semi: true
+singleAttributePerLine: false
+singleQuote: false
+trailingComma: "es5"
+useTabs: false
+plugins:
+  - "@prettier/plugin-xml"
+  - "prettier-plugin-sh"
+  - "prettier-plugin-properties"
+  - "prettier-plugin-organize-imports"
+  - "prettier-plugin-tailwindcss"
+overrides:
+  # JSON
+  - files: [".*rc"]
+    options:
+      parser: "json"
+      trailingComma: "es5"
+
+  # XML
+  - files:
+      - "*.xml"
+    options:
+      parser: xml
+      xmlWhitespaceSensitivity: ignore
+
+  # .NET
+  - files:
+      - "*.DotSettings"
+      - "*.csproj"
+      - "*.mergesettings"
+      - "*.props"
+      - "*.resx"
+      - "*.ruleset"
+      - "*.targets"
+      - "nlog.config"
+      - "nuget.config"
+    options:
+      parser: xml
+      xmlWhitespaceSensitivity: ignore
+
+  # Properties
+  - files:
+      - ".env"
+      - "*.env"
+      - "*.properties"
+    options:
+      parser: "dot-properties"
+      keySeparator: "="

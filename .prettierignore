@@ -1,0 +1,70 @@
+# exclude everything
+*/*
+
+# include directories
+!.config/*
+!apps/*
+!iac/*
+!packages/*
+!src/*
+!test/*
+
+# exclude directories
+.parcel-cache/
+bin/
+dist/
+obj/
+out/
+wwwroot/
+
+# exclude file types
+*.DotSettings.user
+*.bicep
+*.cs
+*.csv
+*.dockerfile
+*.g.*
+*.ico
+*.jpg
+*.map
+*.png
+*.razor
+*.sln
+*.sql
+*.txt
+*.webp
+
+# exclude files
+.editorconfig
+.gitignore
+
+# include files
+!.husky/*.json
+!nlog.config
+!nuget.config
+
+# include file types
+!*.DotSettings
+!*.csproj
+!*.css
+!*.js
+!*.mergesettings
+!*.props
+!*.resx
+!*.ruleset
+!*.scss
+!*.targets
+!*.ts
+!*.xml
+!*rc
+!.*rc
+
+# exclude comments
+\#*
+
+# exclude snapshots
+*.verified.*
+
+# exclude vendor folders
+src/Radzen.Blazor/themes
+src/Radzen.Blazor/wwwroot

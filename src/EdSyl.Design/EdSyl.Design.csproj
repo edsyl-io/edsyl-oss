@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Local Dependencies -->
+  <ItemGroup>
+    <ProjectReference Include="..\EdSyl.Razor\EdSyl.Razor.csproj" />
+  </ItemGroup>
+
+  <!-- Exclude Assets -->
+  <ItemGroup>
+    <Content CopyToPublishDirectory="Never" Update="assets/**" />
+    <Content CopyToPublishDirectory="Never" Update="dist/**" />
+    <Content CopyToPublishDirectory="Never" Update="tsconfig.json" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+global using System.Data;
+global using System.Diagnostics;
+global using System.Diagnostics.CodeAnalysis;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Design;
+global using Microsoft.EntityFrameworkCore.Infrastructure;
+global using Microsoft.EntityFrameworkCore.Metadata;
+global using Microsoft.EntityFrameworkCore.Migrations;
+global using Microsoft.EntityFrameworkCore.Migrations.Design;
+global using Microsoft.EntityFrameworkCore.Migrations.Internal;
+global using Microsoft.EntityFrameworkCore.Migrations.Operations;
+global using Microsoft.EntityFrameworkCore.Storage;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.FileProviders;
+global using Microsoft.Extensions.Hosting;

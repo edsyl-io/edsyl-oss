@@ -1,0 +1,17 @@
+@namespace EdSyl.Design.Components
+@inherits SelfRender
+
+@if (!NoIcon) {
+  <Icon Name="@Icon" class="alert-icon my-1 shrink-0" />
+}
+
+<div class="alert-content">
+  <span class="title-small">@Title</span>
+  <div class="alert-body">
+    @ChildContent
+  </div>
+</div>
+
+@if (Closable) {
+  <Button Icon="@Icons.Close" Textual Secondary @onclick="Hide" />
+}

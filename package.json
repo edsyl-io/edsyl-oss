@@ -1,0 +1,25 @@
+{
+  "name": "edsyl",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Max Stankevich",
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/upcody/edsyl.git"
+  },
+  "workspaces": [
+    "src/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.5.2"
+  },
+  "dependencies": {
+    "@prettier/plugin-xml": "^3.4.2",
+    "prettier": "^3.6.2",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-properties": "^0.3.0",
+    "prettier-plugin-sh": "^0.18.0",
+    "prettier-plugin-tailwindcss": "^0.6.14"
+  }
+}

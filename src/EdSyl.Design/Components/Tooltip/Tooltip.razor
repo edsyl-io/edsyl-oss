@@ -1,0 +1,23 @@
+@namespace EdSyl.Design.Components
+@inherits SelfRenderWithChildren
+@attribute [ClassName("tooltip")]
+
+@ChildContent
+
+@code {
+  private readonly TooltipOptions options = new();
+  private readonly TooltipMediator mediator = new();
+
+  [Parameter]
+  public TooltipPlacement Placement {
+    get => options.Placement;
+    set => options.Placement = value;
+  }
+
+  /// <inheritdoc />
+  protected override void OnAfterRender(bool firstRender) {
+    base.OnAfterRender(firstRender);
+    if (mediator.Mount(Element, options) && ChildContent != null)
+      StateHasChanged();
+  }
+}
